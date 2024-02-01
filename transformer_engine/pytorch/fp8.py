@@ -591,6 +591,8 @@ def _default_get_amax(
     """Default function to obtain amax from history."""
     if amax_compute_algo == "max":
         amax = torch.max(amax_history, dim=0).values
+    elif amax_compute_algo == "mean":
+        amax = torch.mean(amax_history, dim=0)
     else:  # amax_compute_algo == "most_recent"
         amax = amax_history[0].clone()
 

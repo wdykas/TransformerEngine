@@ -122,7 +122,7 @@ class DelayedScaling:
     interval: int = 1
     fp8_format: Format = Format.HYBRID
     amax_history_len: int = 1024
-    amax_compute_algo: Union[Literal["max", "most_recent"], Callable] = "max"
+    amax_compute_algo: Union[Literal["max", "most_recent","mean"], Callable] = "max"
     override_linear_precision: _OverrideLinearPrecision = _OverrideLinearPrecision()
     scaling_factor_compute_algo: Optional[Callable] = None
     reduce_amax: bool = True
